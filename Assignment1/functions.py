@@ -3,15 +3,14 @@ CP322: Assignment 1- Custom Functions Library One
 -------------------------------------------------------
 Author:  JD
 ID:      91786
-Uses:    numpy,openCV,matplotlib,pandas,OpenCV
+Uses:    numpy,os
 Version:  1.0.8
 __updated__ = Thu Jan 30 2025
 -------------------------------------------------------
 """
 
-import numpy as np
-
 import os
+import numpy as np
 
 
 def calculate_euclidean_distance(p1, p2):
