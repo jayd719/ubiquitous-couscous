@@ -13,7 +13,7 @@ import os
 import numpy as np
 
 
-def calculate_euclidean_distance(p1, p2):
+def cal_euclidean_distance(p1, p2):
     """Calculate the Euclidean distance between two points."""
     assert len(p1) == len(p2), "Dimension mismatch between the two points"
     dist = 0
@@ -23,6 +23,7 @@ def calculate_euclidean_distance(p1, p2):
 
 
 def calculate_manhattan_distance(p1, p2):
+    """Calculate the Manhattan distance between two points."""
     assert len(p1) == len(p2), "Dimension mismatch between the two points"
     dist = 0
     for i in range(len(p1)):
@@ -37,7 +38,7 @@ if __name__ == "__main__":
     print("Test Case 1-2D")
     p1 = (1, 2)
     p2 = (5, 6)
-    distance = calculate_euclidean_distance(p1, p2)
+    distance = cal_euclidean_distance(p1, p2)
     print(f"Euclidean Distance between {p1} and {p2}: {distance:.4f}")
     distance = calculate_manhattan_distance(p1, p2)
     print(f"Manhattan Distance between {p1} and {p2}: {distance:.4f}")
@@ -45,7 +46,7 @@ if __name__ == "__main__":
     print("Test Case 2-3D")
     p1 = (1, 2, 3)
     p2 = (5, 6, 7)
-    distance = calculate_euclidean_distance(p1, p2)
+    distance = cal_euclidean_distance(p1, p2)
     print(f"Euclidean Distance between {p1} and {p2}: {distance:.4f}")
     distance = calculate_manhattan_distance(p1, p2)
     print(f"Manhattan Distance between {p1} and {p2}: {distance:.4f}")
@@ -53,7 +54,7 @@ if __name__ == "__main__":
     print("Test Case 3-4D")
     p1 = (1, 2, 3, 4)
     p2 = (5, 6, 7, 8)
-    distance = calculate_euclidean_distance(p1, p2)
+    distance = cal_euclidean_distance(p1, p2)
     print(f"Euclidean Distance between {p1} and {p2}: {distance:.4f}")
     distance = calculate_manhattan_distance(p1, p2)
     print(f"Manhattan Distance between {p1} and {p2}: {distance:.4f}")
