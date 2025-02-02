@@ -11,52 +11,44 @@ from sklearn.datasets import (
     fetch_california_housing,
 )
 
-plt.style.use("ggplot")
-plt.figure(figsize=(12, 8))
-
 # TEST 1
+print("Testing IRIS DATASET")
 X, y = load_iris(return_X_y=True)
 preProcess(X)
 k_values, avg_accuracy = TEST_DATA(X, y)
 plot_results(k_values, avg_accuracy, "IRIS")
-plt.plot(
-    k_values,
-    avg_accuracy,
-    marker="o",
-    linestyle="dashed",
-    label="IRIS",
-    alpha=0.7,
-    linewidth=1.5,
-)
-
 
 # TEST 2
+print("Testing DIABETES DATASET")
 X, y = load_diabetes(return_X_y=True)
 preProcess(X)
 k_values, avg_accuracy = TEST_DATA(X, y)
 plot_results(k_values, avg_accuracy, "DIABETES")
-plt.plot(
-    k_values,
-    avg_accuracy,
-    marker="o",
-    linestyle="dashed",
-    label="diabetes",
-    alpha=0.7,
-    linewidth=1.5,
-)
 
+# TEST 3
+print("Testing DIGITS DATASET")
+X, y = load_digits(return_X_y=True)
+preProcess(X)
+k_values, avg_accuracy = TEST_DATA(X, y)
+plot_results(k_values, avg_accuracy, "DIGITS")
 
-# savd
+# TEST 4
+print("Testing WINE DATASET")
+X, y = load_wine(return_X_y=True)
+preProcess(X)
+k_values, avg_accuracy = TEST_DATA(X, y)
+plot_results(k_values, avg_accuracy, "WINE")
 
-outputfile = "all"
-plt.xlabel("Number of Neighbors (k)")
-plt.ylabel("Cross-Validation Accuracy")
-plt.title(
-    f"KNN Cross-Validation Accuracy vs k on {outputfile} Dataset",
-    fontsize=16,
-    fontweight="bold",
-)
-plt.legend(prop={"size": 12, "weight": "bold"}, labelcolor="black")
-plt.axis("equal")
-plt.savefig(f"{outputfile}.png", format="png", bbox_inches="tight", transparent=True)
-plt.close()
+# TEST 5
+print("Testing BREAST CANCER DATASET")
+X, y = load_breast_cancer(return_X_y=True)
+preProcess(X)
+k_values, avg_accuracy = TEST_DATA(X, y)
+plot_results(k_values, avg_accuracy, "BREAST CANCER")
+
+# TEST 6 (Regression Task)
+print("Testing CALIFORNIA HOUSING DATASET")
+X, y = fetch_california_housing(return_X_y=True)
+preProcess(X)
+k_values, avg_accuracy = TEST_DATA(X, y)
+plot_results(k_values, avg_accuracy, "CALIFORNIA HOUSING")

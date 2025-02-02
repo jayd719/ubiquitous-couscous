@@ -4,6 +4,7 @@ from sklearn.model_selection import KFold
 from collections import Counter
 import numpy as np
 import pandas as pd
+from tqdm import tqdm
 
 
 class KNN:
@@ -119,9 +120,8 @@ def TEST_DATA(X, y):
     kf = KFold(n_splits=10, shuffle=True, random_state=65)
     k_values = range(1, 31)
     avg_accuracy = []
-    for k in k_values:
+    for k in tqdm(k_values):
         accuracies = []
-        print(f"\nK:{k}")
         for train_index, test_index in kf.split(X):
             Xtrain, Xtest = X[train_index], X[test_index]
             ytrain, ytest = y[train_index], y[test_index]
