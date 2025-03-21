@@ -6,43 +6,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    img {
+        width: 100%;
+    }
+
+    figure {
+        border: 1px solid black;
+        width: 75%;
+        margin: auto;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+    p {
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+</style>
 
 <body>
-    <main>
+    <main style="max-width: 800px; margin: auto;">
         <h2>Report</h2>
+        <span><strong>Group 5:</strong> Jashandeep Singh, Jordan Cao</span>
         <h1>Assignment3: Task 1</h1>
         <h3>Part A</h3>
-        <img width="100%" src="errors_in_varing_MISSING.png" alt="">
-        <img width="100%" src="Training and Validation Error Over Epochs.png" alt="">
+        <p>A steady decrease in training and validation loss shows that the model is learning and improving its
+            performance. When
+            both losses stop decreasing and level off, it means the model has likely reached convergence.
+            For the given hyperparameters, both training and validation loss plateau after 125 epochs, showing no
+            significant
+            changes. At this point, early stopping is applied to prevent overfitting and save resources. Since both
+            testing and
+            validation loss decrease and remain stable after a certain point, it indicates that the model is
+            well-fitted
+            to the
+            data. The good fit is further confirmed by the error of testing, validation and testing. The lower test
+            error could indicate robust generalization.</p>
+        <div>
+            <figure>
+                <img src="Training and Validation Error Over Epochs.png" alt="">
+                <figcaption>Fig 1</figcaption>
+            </figure>
+            <figure>
+                <img src="errors_in_varing_MISSING.png" alt="">
+                <figcaption>Fig 2</figcaption>
+            </figure>
+        </div>
 
-        <h3>Part B</h3>
-        <p>A neural network can be considered to have converged when the training error (or loss) stops decreasing or
+        <h3 style="margin-top:100px ;">Part B</h3>
+        <p>A neural network can be considered to have converged when the training error (or loss) stops decreasing
+            or
             has reached a minimum level of acceptable error.</p>
 
         <h4>Changes in Learning Rate While Keeping Other Hyperparameters Constant</h4>
-        <img width="100%" src="varying_learning_rate.png" alt="">
-        <img width="100%" src="errors_in_varing_Learning Rate.png" alt="">
+        <p>The learning rate determines how much the model's weights are adjusted during each training step. When
+            training a model with learning rates ranging from 0.0001 to 1.0, we can see that smaller
+            learning rates take more epochs to reach convergence because the weight updates are smaller in each
+            step. On
+            the other hand, larger learning rates require fewer epochs but often lead to a suboptimal solution, as
+            seen
+            in higher training, validation, and testing errors compared to smaller learning rates. The testing,
+            training, and validation errors stay roughly the same as with smaller rates. This means the model
+            trains faster, for .01 learning rate, without sacrificing much accuracy, making this value a good
+            balance
+            between speed and stability.</p>
+        <div>
+            <figure>
+                <img src="varying_learning_rate.png" alt="">
+                <figcaption>Fig 3</figcaption>
+            </figure>
+            <figure>
+                <img src="errors_in_varing_Learning Rate.png" alt="">
+                <figcaption>Fig 4</figcaption>
+            </figure>
+        </div>
+
 
         <h4>Changes in Batch Sizes While Keeping Other Hyperparameters Constant</h4>
-        <img width="100%" src="varying_batch_size.png" alt="">
-        <img width="100%" src="errors_in_varing_Batch Size.png" alt="">
-
+        <p>From the training, testing, and validation errors, it is clear that larger batch sizes result in poor
+            model
+            generalization. As the batch size increases, the error rates across all three datasets also rise. Based
+            on
+            test results
+            using five different batch sizes, smaller batch sizes not only reach convergence faster but also
+            generalize
+            better. </p>
+        <div>
+            <figure>
+                <img src="varying_batch_size.png" alt="">
+                <figcaption>Fig 5</figcaption>
+            </figure>
+            <figure>
+                <img src="errors_in_varing_Batch Size.png" alt="">
+                <figcaption>Fig 6</figcaption>
+            </figure>
+        </div>
+        <div style="height: 175px;"></div>
         <h3>Part C</h3>
         <h4>Changes in Number of Neurons While Keeping Other Hyperparameters Constant</h4>
-        <img width="100%" src="varying_number_of_neurons.png" alt="" sizes="" srcset="">
-        <img width="100%" src="errors_in_varing_Number of hidden units for each layer.png" alt="">
-
+        <p>From the experiment conducted understand how changing the number of neurons in the hidden results show
+            that
+            different number of neurons take a similar number of epochs to reach convergence. But it a
+            significant difference is seen in how well the model generalizes as the number of neurons increases.
+            Models
+            with a higher number of neurons in the hidden layer tend to perform better, as they can capture more
+            complex
+            patterns in the data. This suggests that increasing the number of neurons helps
+            the model make more accurate predictions on new, unseen data.</p>
+        <div>
+            <figure>
+                <img src="varying_number_of_neurons.png" alt="" sizes="" srcset="">
+                <figcaption>Fig 7</figcaption>
+            </figure>
+            <figure>
+                <img src="errors_in_varing_Number of hidden units for each layer.png" alt="">
+                <figcaption>Fig 8</figcaption>
+            </figure>
+        </div>
+        <div style="height: 75px;"></div>
         <h3>Part D</h3>
-        <p>Confusion matrix for your best network</p>
-        <img width="100%" src="confusionMatrix.png" alt="">
+        <p>Based on the test results, the best parameters were chosen: a learning rate of 0.01, a batch size of 100,
+            and
+            100 units in the hidden layer. Using these optimal hyperparameters, the model was initialized, trained,
+            validated, and tested. Below is the confusion matrix for the best-performing network.</p>
+
+        <figure>
+            <img src="confusionMatrix.png" alt="">
+            <figcaption>Fig 9</figcaption>
+        </figure>
 
     </main>
 
-    <script src="https://jayd719.github.io/assets/reports/reportV3.js"></script>
-    <script src="https://jayd719.github.io/assets/reports/PresentationFormatter.js"></script>
-    <script>
-        updateCSS(['img'], ['border', 'm-2'])
-    </script>
+    <!-- <script src="https://jayd719.github.io/assets/reports/reportV3.js"></script> -->
+    <!-- <script src="https://jayd719.github.io/assets/reports/PresentationFormatter.js"></script> -->
+
 </body>
 
 </html>
