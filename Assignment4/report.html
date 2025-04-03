@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        width: 100%;
+    }
+
+    figure {
+        border: 1px solid black;
+        width: 65%;
+        margin: auto;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+    p {
+        margin-left: 25px;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+</style>
+
+<body>
+    <main style="max-width: 800px; margin: auto;">
+        <h2>Report</h2>
+        <span><strong>Group 5:</strong> Jashandeep Singh, Jordan Cao</span>
+        <h1>Assignment 4: <strong>MNIST Classification with CNN</strong></h1>
+        <hr>
+        <h3>Q1: Number of parameters at each layer</h3>
+        <p>The number of parameters for each layer in the CNN model:</p>
+        <ul>
+            <li>Convolutional_Layer_1: <strong>80</strong></li>
+            <li>Pooling_Layer_1: <strong>0</strong></li>
+            <li>Convolutional_Layer_2: <strong>1168</strong></li>
+            <li>Pooling_Layer_2: <strong>0</strong></li>
+            <li>Flatten_layer: <strong>0</strong></li>
+            <li>Dense_layer_1: <strong>100480</strong></li>
+            <li>dropout_3: <strong>0</strong></li>
+            <li>Output_layer: <strong>1290</strong></li>
+        </ul>
+        <h3>Q2: Size of final extracted feature vector:</h3>
+        <p>The size of the final extracted feature vector from the Flatten layer is <strong>784</strong></p>
+        <h3>Q3: Accuracy of CNN on training and test sets:</h3>
+        <ul>
+            <li>Training Accuracy: <strong>99.98%</strong></li>
+            <li>Test Accuracy: <strong>98.88%</strong></li>
+        </ul>
+        <div>
+            <figure style="transform: scale(1);">
+                <img src="Model Accuracy While Training Over 100.png" alt="">
+                <figcaption>Fig 1</figcaption>
+            </figure>
+        </div>
+        <h3 style="margin-top: 100px;">Q4: Confusion matrix:</h3>
+        <div>
+            <figure>
+                <img src="Confusion Matrix.png" alt="">
+                <figcaption>Fig 1</figcaption>
+            </figure>
+        </div>
+        <h3>Q5: Extract feature vectors and apply kNN</h3>
+        <p>The kNN (k=5, Euclidean distance) test accuracy on the extracted flattened feature vectors is
+            <Strong>98.21%</Strong>
+        </p>
+        <h3>Q6: Apply PCA to test feature vectors and represent in 2D</h3>
+        <div>
+            <figure>
+                <img src="PCA Visualization of CNN-Extracted Features.png" alt="">
+                <figcaption>Fig 1</figcaption>
+            </figure>
+        </div>
+        <h3>Q7: Repeat with 10 principal components and apply kNN</h3>
+        <p>The kNN (k=5, Euclidean distance) test accuracy on the 10-dimensional PCA-reduced feature vectors is
+            <strong>96.42%</strong>
+        </p>
+
+
+    </main>
+
+    <!-- <script src="https://jayd719.github.io/assets/reports/reportV3.js"></script> -->
+    <!-- <script src="https://jayd719.github.io/assets/reports/PresentationFormatter.js"></script> -->
+
+</body>
+
+</html>
